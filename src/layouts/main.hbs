@@ -16,7 +16,7 @@
     <div class="drawer-content flex flex-col min-h-screen">
       {{> partials/navbar.hbs}}
 
-      <main class="flex-1 p-4 lg:p-6">
+      <main id="main-content" class="flex-1 p-4 lg:p-6">
         {{> @partial-block }}
       </main>
 
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Drawer Sidebar -->
-    <div id="sidebar-menu" class="drawer-side z-40">
+    <div class="drawer-side z-40">
       <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       {{> partials/sidebar.hbs}}
     </div>
