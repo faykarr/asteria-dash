@@ -1,0 +1,58 @@
+<aside class="bg-base-200 min-h-full w-72 flex flex-col border-r border-base-300">
+  <!-- Brand Logo -->
+  <div class="flex items-center gap-3 px-4 py-5 border-b border-base-300">
+    <div class="bg-primary text-primary-content rounded-box p-2">
+      <i class="iconoir-star-solid text-2xl"></i>
+    </div>
+    <div>
+      <h1 class="text-lg font-bold text-base-content">{{brandName}}</h1>
+      <p class="text-xs text-base-content/60">Admin Dashboard</p>
+    </div>
+  </div>
+
+  <!-- Navigation Menu -->
+  <ul class="menu menu-md flex-1 px-3 py-4 scrollbar-thin overflow-y-auto w-full">
+    <li class="menu-title">Main</li>
+    <li>
+      <a class="menu-active">
+        <i class="iconoir-app-window text-lg"></i>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="iconoir-graph-up text-lg"></i>
+        Analytics
+      </a>
+    </li>
+
+    <li class="menu-title mt-4">Management</li>
+    <li>
+      <details>
+        <summary>
+          <i class="iconoir-group text-lg"></i>
+          Users
+        </summary>
+        <ul>
+          <li><a>All Users</a></li>
+          <li><a>Add User</a></li>
+          <li><a>Roles</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <a>
+        <i class="iconoir-settings text-lg"></i>
+        Settings
+      </a>
+    </li>
+  </ul>
+
+  <!-- Logout di bottom -->
+  <div class="border-t border-base-300 p-3">
+    <a class="btn btn-ghost btn-block justify-start gap-3 text-error">
+      <i class="iconoir-log-out text-lg"></i>
+      Logout
+    </a>
+  </div>
+</aside>
