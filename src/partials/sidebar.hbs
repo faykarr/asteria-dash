@@ -1,8 +1,12 @@
-<aside class="bg-base-200 min-h-full w-72 flex flex-col border-r border-base-300">
+<aside
+  class="bg-base-200 min-h-full w-72 flex flex-col border-r border-base-300"
+>
   <!-- Brand Logo -->
   <div class="flex items-center gap-3 px-4 py-5 border-b border-base-300">
-    <div class="bg-primary text-primary-content rounded-box p-2">
-      <i class="iconoir-star-solid text-2xl"></i>
+    <div
+      class="bg-primary text-primary-content rounded-box p-2 flex items-center justify-center"
+    >
+      <i class="iconoir-percentage-square text-2xl"></i>
     </div>
     <div>
       <h1 class="text-lg font-bold text-base-content">{{brandName}}</h1>
@@ -11,16 +15,47 @@
   </div>
 
   <!-- Navigation Menu -->
-  <ul class="menu menu-md flex-1 px-3 py-4 scrollbar-thin overflow-y-auto w-full">
-    <li class="menu-title">Main</li>
+  <ul
+    id="sidebar-menu"
+    class="menu menu-md flex-1 px-3 py-4 w-full gap-1 relative overflow-hidden"
+  >
+    <li class="menu-title">Main Menu</li>
     <li>
-      <a class="menu-active">
-        <i class="iconoir-app-window text-lg"></i>
-        Dashboard
-      </a>
+      <details open>
+        <summary class="py-2 menu-active">
+          <i class="iconoir-dashboard text-lg"></i>
+          Dashboards
+        </summary>
+        <ul class="flex flex-col gap-1.5 mt-2">
+          <li>
+            <a class="py-2 menu-active">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-dashboard text-lg"></i>
+                E-Commerce
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-dashboard text-lg"></i>
+                Finance
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-dashboard text-lg"></i>
+                Project
+              </span>
+            </a>
+          </li>
+        </ul>
+      </details>
     </li>
     <li>
-      <a>
+      <a class="py-2">
         <i class="iconoir-graph-up text-lg"></i>
         Analytics
       </a>
@@ -29,19 +64,39 @@
     <li class="menu-title mt-4">Management</li>
     <li>
       <details>
-        <summary>
+        <summary class="py-2">
           <i class="iconoir-group text-lg"></i>
           Users
         </summary>
         <ul>
-          <li><a>All Users</a></li>
-          <li><a>Add User</a></li>
-          <li><a>Roles</a></li>
+          <li><a class="py-2">All Users</a></li>
+          <li><a class="py-2">Add User</a></li>
+          <li><a class="py-2">Roles</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="menu-title mt-4">Layouts</li>
+    <li>
+      <details>
+        <summary class="py-2">
+          <i class="iconoir-layout-left text-lg"></i>
+          Layouts
+        </summary>
+        <ul class="flex flex-col gap-1.5 mt-2">
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-dashboard text-lg"></i>
+                Blank Layout
+              </span>
+            </a>
+          </li>
         </ul>
       </details>
     </li>
     <li>
-      <a>
+      <a class="py-2">
         <i class="iconoir-settings text-lg"></i>
         Settings
       </a>
@@ -50,7 +105,7 @@
 
   <!-- Logout di bottom -->
   <div class="border-t border-base-300 p-3">
-    <a class="btn btn-ghost btn-block justify-start gap-3 text-error">
+    <a class="btn btn-error btn-block justify-start gap-3">
       <i class="iconoir-log-out text-lg"></i>
       Logout
     </a>
