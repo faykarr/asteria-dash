@@ -70,3 +70,28 @@
   --depth: 1;
   --noise: 1;
 }
+
+/* ─── Navbar Component Utilities ─────────────────────────────────────────── */
+
+/* Scrollbar ramping untuk dropdown & modal list */
+.max-h-80,
+.max-h-\[60vh\] {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(from var(--color-base-content) l c h / 0.2) transparent;
+}
+
+.max-h-80::-webkit-scrollbar,
+.max-h-\[60vh\]::-webkit-scrollbar {
+  width: 4px;
+}
+
+.max-h-80::-webkit-scrollbar-thumb,
+.max-h-\[60vh\]::-webkit-scrollbar-thumb {
+  background: oklch(from var(--color-base-content) l c h / 0.2);
+  border-radius: 9999px;
+}
+
+.max-h-80::-webkit-scrollbar-track,
+.max-h-\[60vh\]::-webkit-scrollbar-track {
+  background: transparent;
+}

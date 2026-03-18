@@ -24,12 +24,22 @@
     </div>
 
     <!-- Drawer Sidebar -->
-    <div class="drawer-side z-40">
+    <div id="sidebar-menu" class="drawer-side z-40">
       <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       {{> partials/sidebar.hbs}}
     </div>
   </div>
 
+  {{> partials/components/search-modal.hbs}}
   <script type="module" src="/src/assets/js/app.js"></script>
+  <script>
+    // Shortcut global Ctrl+K / Cmd+K untuk membuka search modal
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('open-search'));
+      }
+    });
+  </script>
 </body>
 </html>
