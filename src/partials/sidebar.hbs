@@ -13,18 +13,29 @@
   <!-- Navigation Menu -->
   <ul id="sidebar-menu"
     class="menu menu-md flex-1 flex-col flex-nowrap px-3 py-4 w-full gap-1 relative overflow-hidden">
+
+    {{!-- Welcome --}}
+    <li class="menu-title">Welcome</li>
+    <li>
+      <a class="py-2 menu-active">
+        <i class="iconoir-home text-lg"></i>
+        Home
+      </a>
+    </li>
+
+    {{!-- Dashboards --}}
     <li class="menu-title">Dashboards</li>
     <li>
-      <details open>
-        <summary class="py-2 menu-active">
+      <details>
+        <summary class="py-2e">
           <i class="iconoir-dashboard text-lg"></i>
           Dashboards
         </summary>
         <ul class="flex flex-col gap-1.5 mt-2">
           <li>
-            <a class="py-2 menu-active">
+            <a class="py-2">
               <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-dashboard text-lg"></i>
+                <i class="iconoir-shop-four-tiles text-lg"></i>
                 E-Commerce
               </span>
             </a>
@@ -32,7 +43,7 @@
           <li>
             <a class="py-2">
               <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-dashboard text-lg"></i>
+                <i class="iconoir-bank text-lg"></i>
                 Finance
               </span>
             </a>
@@ -40,22 +51,25 @@
           <li>
             <a class="py-2">
               <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-dashboard text-lg"></i>
+                <i class="iconoir-folder text-lg"></i>
                 Project
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-graph-up text-lg"></i>
+                Analytics
               </span>
             </a>
           </li>
         </ul>
       </details>
     </li>
-    <li>
-      <a class="py-2">
-        <i class="iconoir-graph-up text-lg"></i>
-        Analytics
-      </a>
-    </li>
 
-    <li class="menu-title mt-4">Management</li>
+    {{!-- CRUD Management --}}
+    <li class="menu-title mt-4">CRUD Management</li>
     <li>
       <details>
         <summary class="py-2">
@@ -63,13 +77,43 @@
           Users
         </summary>
         <ul>
-          <li><a class="py-2">All Users</a></li>
-          <li><a class="py-2">Add User</a></li>
-          <li><a class="py-2">Roles</a></li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-community text-lg"></i>
+                All Users
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-user text-lg"></i>
+                Users Detail
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-user-plus text-lg"></i>
+                Add User
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="iconoir-user-circle text-lg"></i>
+                Roles
+              </span>
+            </a>
+          </li>
         </ul>
       </details>
     </li>
 
+    {{!-- Layouts --}}
     <li class="menu-title mt-4">Layouts</li>
     <li>
       <details>
@@ -89,6 +133,13 @@
         </ul>
       </details>
     </li>
+
+    {{!-- UI Elements --}}
+    {{!-- Extra UI Elements --}}
+    {{!-- Pages --}}
+
+    {{!-- Application Settings --}}
+    <li class="menu-title mt-4">Application Settings</li>
     <li>
       <a class="py-2">
         <i class="iconoir-settings text-lg"></i>
