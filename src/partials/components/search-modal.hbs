@@ -19,7 +19,11 @@
       <!-- Search Input -->
       <div class="flex items-center gap-3 px-4 py-3 border-b border-base-300">
         <i class="iconoir-search text-xl text-base-content/50 shrink-0"></i>
-        <input x-ref="searchInput" x-model="query" x-on:input="onQuery()" type="text"
+        <input x-ref="searchInput" x-model="query" x-on:input="onQuery()"
+          x-on:keydown.down.prevent="selectNext()"
+          x-on:keydown.up.prevent="selectPrevious()"
+          x-on:keydown.enter.prevent="navigate()"
+          type="text"
           placeholder="Search pages, menus, or actions..."
           class="input input-ghost flex-1 px-0 py-0 focus:outline-none text-base placeholder:text-base-content/40 bg-transparent border-none shadow-none focus:border-none focus:shadow-none h-auto"
           autocomplete="off" />
@@ -43,8 +47,10 @@
           <p class="text-xs font-semibold text-base-content/40 uppercase tracking-wider px-2 py-1 mb-1">Results</p>
           <template x-for="(item, idx) in results" :key="idx">
             <a :href="item.url"
-              class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-base-200 transition-colors group"
-              x-on:click="close()">
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors group"
+              :class="{ 'bg-base-200': activeIndex === idx }"
+              x-on:click="saveToRecent(item); close()"
+              x-on:mouseenter="activeIndex = idx">
               <span
                 class="w-8 h-8 flex items-center justify-center rounded-lg bg-base-200 group-hover:bg-base-300 transition-colors shrink-0">
                 <i :class="item.icon + ' text-base text-primary'"></i>
@@ -61,50 +67,63 @@
 
         <!-- Default: Recent Pages -->
         <div x-show="query.length === 0">
-          <p class="text-xs font-semibold text-base-content/40 uppercase tracking-wider px-2 py-1 mb-1">Recent Pages</p>
-          <template x-for="(page, idx) in recentPages" :key="idx">
-            <a :href="page.url"
-              class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-base-200 transition-colors group"
-              x-on:click="close()">
-              <span
-                class="w-8 h-8 flex items-center justify-center rounded-lg bg-base-200 group-hover:bg-base-300 transition-colors shrink-0">
-                <i :class="page.icon + ' text-base text-primary'"></i>
-              </span>
-              <div class="flex-1 min-w-0">
-                <p class="text-sm font-medium truncate" x-text="page.title"></p>
-                <p class="text-xs text-base-content/50 truncate" x-text="page.desc"></p>
+          <template x-if="recentPages.length > 0">
+            <div>
+              <div class="flex items-center justify-between px-2 py-1 mb-1">
+                <p class="text-xs font-semibold text-base-content/40 uppercase tracking-wider">Recent Pages</p>
+                <button x-on:click="clearHistory()" class="text-[10px] font-medium text-primary hover:underline transition-all">Clear History</button>
               </div>
-              <i class="iconoir-clock text-sm text-base-content/25"></i>
-            </a>
+              <template x-for="(page, idx) in recentPages" :key="idx">
+                <a :href="page.url"
+                  class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors group"
+                  :class="{ 'bg-base-200': activeIndex === idx }"
+                  x-on:click="saveToRecent(page); close()"
+                  x-on:mouseenter="activeIndex = idx">
+                  <span
+                    class="w-8 h-8 flex items-center justify-center rounded-lg bg-base-200 group-hover:bg-base-300 transition-colors shrink-0">
+                    <i :class="page.icon + ' text-base text-primary'"></i>
+                  </span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium truncate" x-text="page.title"></p>
+                    <p class="text-xs text-base-content/50 truncate" x-text="page.desc"></p>
+                  </div>
+                  <i class="iconoir-clock text-sm text-base-content/25"></i>
+                </a>
+              </template>
+            </div>
           </template>
 
-          <!-- Quick Actions -->
-          <p class="text-xs font-semibold text-base-content/40 uppercase tracking-wider px-2 py-1 mt-3 mb-1">Quick
-            Actions</p>
-          <template x-for="(action, idx) in quickActions" :key="idx">
-            <button
-              class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-base-200 transition-colors group text-left"
-              x-on:click="action.handler(); close()">
-              <span
-                class="w-8 h-8 flex items-center justify-center rounded-lg bg-base-200 group-hover:bg-base-300 transition-colors shrink-0">
-                <i :class="action.icon + ' text-base text-accent'"></i>
-              </span>
-              <p class="text-sm font-medium flex-1 truncate" x-text="action.title"></p>
-              <kbd x-show="action.shortcut" class="kbd kbd-sm text-base-content/40 text-xs"
-                x-text="action.shortcut"></kbd>
-            </button>
+          <!-- Empty state semalam (No Recent Pages) -->
+          <template x-if="recentPages.length === 0">
+            <div class="py-12 text-center">
+              <div class="w-16 h-16 bg-base-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="iconoir-bubble-search text-2xl text-base-content/30"></i>
+              </div>
+              <p class="text-sm font-medium text-base-content/60">No recent pages</p>
+              <p class="text-xs text-base-content/40 mt-1">Start searching to see your history here.</p>
+            </div>
           </template>
         </div>
       </div>
 
       <!-- Footer Hints -->
       <div class="flex items-center gap-4 px-4 py-2.5 border-t border-base-300 bg-base-200/50">
-        <span class="flex items-center gap-1.5 text-xs text-base-content/40">
-          <kbd class="kbd kbd-sm text-xs">Esc</kbd>
-          Close
-        </span>
-        <span class="ml-auto flex items-center gap-1 text-xs text-base-content/30">
-          <kbd class="kbd kbd-sm text-xs">Ctrl</kbd>+<kbd class="kbd kbd-sm text-xs">K</kbd>
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5 text-xs text-base-content/40">
+            <kbd class="kbd kbd-sm text-[10px] h-5 min-h-0">↑↓</kbd>
+            Navigate
+          </span>
+          <span class="flex items-center gap-1.5 text-xs text-base-content/40">
+            <kbd class="kbd kbd-sm text-[10px] h-5 min-h-0 whitespace-nowrap">Enter</kbd>
+            Select
+          </span>
+          <span class="flex items-center gap-1.5 text-xs text-base-content/40">
+            <kbd class="kbd kbd-sm text-[10px] h-5 min-h-0">Esc</kbd>
+            Close
+          </span>
+        </div>
+        <span class="ml-auto flex items-center gap-1 text-xs text-base-content/30 italic">
+          <kbd class="kbd kbd-sm text-[10px] h-5 min-h-0">Ctrl / ⌘</kbd>+<kbd class="kbd kbd-sm text-[10px] h-5 min-h-0">K</kbd> to focus
         </span>
       </div>
     </div>
@@ -141,43 +160,51 @@
       isOpen: false,
       query: '',
       results: [],
-      recentPages: allPages.slice(0, 4),
-      quickActions: [
-        {
-          title: 'Toggle Dark Mode',
-          icon: 'iconoir-half-moon',
-          shortcut: null,
-          handler() {
-            const ctrl = document.querySelector('.theme-controller');
-            if (ctrl) { ctrl.click(); }
-          }
-        },
-        {
-          title: 'Pergi ke Profil',
-          icon: 'iconoir-user',
-          shortcut: null,
-          handler() { window.location.href = '#'; }
-        },
-        {
-          title: 'Buka Pengaturan',
-          icon: 'iconoir-settings',
-          shortcut: null,
-          handler() { window.location.href = '#'; }
-        },
-      ],
+      activeIndex: -1,
+      recentPages: [],
+      init() {
+        this.loadRecentPages();
+      },
+      loadRecentPages() {
+        const saved = localStorage.getItem('asteria_recent_pages');
+        if (saved) {
+          this.recentPages = JSON.parse(saved);
+        }
+      },
+      saveToRecent(item) {
+        // Hapus duplikat berdasarkan URL
+        let history = this.recentPages.filter(p => p.url !== item.url);
+        // Tambahkan ke awal
+        history.unshift({
+          title: item.title,
+          desc: item.desc,
+          icon: item.icon,
+          url: item.url
+        });
+        // Batasi maksimal 5
+        this.recentPages = history.slice(0, 5);
+        localStorage.setItem('asteria_recent_pages', JSON.stringify(this.recentPages));
+      },
+      clearHistory() {
+        this.recentPages = [];
+        localStorage.removeItem('asteria_recent_pages');
+      },
       open() {
         this.isOpen = true;
         this.query = '';
         this.results = [];
+        this.activeIndex = -1;
         this.$nextTick(() => { this.$refs.searchInput?.focus(); });
       },
       close() {
         this.isOpen = false;
         this.query = '';
         this.results = [];
+        this.activeIndex = -1;
       },
       onQuery() {
         const q = this.query.toLowerCase().trim();
+        this.activeIndex = -1;
         if (!q) { this.results = []; return; }
 
         // Cari di semua halaman yang diambil dari sidebar
@@ -185,6 +212,25 @@
           i.title.toLowerCase().includes(q) ||
           i.desc.toLowerCase().includes(q)
         );
+      },
+      get currentItems() {
+        return this.query.length > 0 ? this.results : this.recentPages;
+      },
+      selectNext() {
+        if (this.currentItems.length === 0) return;
+        this.activeIndex = (this.activeIndex + 1) % this.currentItems.length;
+      },
+      selectPrevious() {
+        if (this.currentItems.length === 0) return;
+        this.activeIndex = (this.activeIndex - 1 + this.currentItems.length) % this.currentItems.length;
+      },
+      navigate() {
+        if (this.activeIndex >= 0 && this.activeIndex < this.currentItems.length) {
+          const item = this.currentItems[this.activeIndex];
+          this.saveToRecent(item);
+          window.location.href = item.url;
+          this.close();
+        }
       }
     };
   }
