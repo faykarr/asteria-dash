@@ -15,35 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarMenu = document.getElementById('sidebar-menu');
   if (sidebarMenu) {
     new PerfectScrollbar(sidebarMenu, {
-      wheelSpeed: 0.5,
+      wheelSpeed: 0.25,
       wheelPropagation: true,
-      minScrollbarLength: 20
-    });
-  }
-
-  const mainContent = document.getElementById('main-content');
-  if (mainContent) {
-    new PerfectScrollbar(mainContent, {
-      wheelSpeed: 0.5,
-      wheelPropagation: true,
-      minScrollbarLength: 20
+      minScrollbarLength: 20,
+      maxScrollbarLength: 200,
+      suppressScrollX: false,
     });
   }
 
   // Theme Persistence
   const themeController = document.querySelector('.theme-controller');
   if (themeController) {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme') || 'asteria-light';
+    
+    // Apply saved theme on load
     if (savedTheme === 'asteria-dark') {
       themeController.checked = true;
+      document.documentElement.setAttribute('data-theme', 'asteria-dark');
+    } else {
+      themeController.checked = false;
+      document.documentElement.setAttribute('data-theme', 'asteria-light');
     }
 
     themeController.addEventListener('change', (e) => {
-      if (e.target.checked) {
-        localStorage.setItem('theme', 'asteria-dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      const theme = e.target.checked ? 'asteria-dark' : 'asteria-light';
+      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
     });
   }
 });

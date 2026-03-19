@@ -2,7 +2,11 @@
   <!-- Brand Logo -->
   <div class="flex items-center gap-3 px-4 py-5 border-b border-base-300">
     <div class="bg-primary text-primary-content rounded-box p-2 flex items-center justify-center">
+      {{!-- Icon Brand --}}
       <i class="iconoir-percentage-square text-2xl"></i>
+
+      {{!-- Image brand --}}
+      {{!-- <img src="{{brandLogo}}" alt="Brand Logo" class="w-8 h-8 rounded-xl select-none pointer-events-none" /> --}}
     </div>
     <div>
       <h1 class="text-lg font-bold text-base-content">{{brandName}}</h1>
@@ -14,356 +18,38 @@
   <ul id="sidebar-menu"
     class="menu menu-md flex-1 flex-col flex-nowrap px-3 py-4 w-full gap-1 relative overflow-hidden">
 
-    {{!-- Welcome --}}
-    <li class="menu-title">Welcome</li>
+    {{#each sidebar}}
+    <li class="menu-title {{#if @first}}{{else}}mt-4{{/if}}">{{title}}</li>
+    {{#each items}}
     <li>
-      <a class="py-2 menu-active">
-        <i class="iconoir-home text-lg"></i>
-        Home
+      {{#if submenu}}
+      <details>
+        <summary class="py-2">
+          <i class="{{icon}} text-lg"></i>
+          {{label}}
+        </summary>
+        <ul class="flex flex-col gap-1.5 mt-2">
+          {{#each submenu}}
+          <li>
+            <a href="{{url}}" class="py-2">
+              <span class="flex justify-start items-center gap-2">
+                <i class="{{icon}} text-lg"></i>
+                {{label}}
+              </span>
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </details>
+      {{else}}
+      <a href="{{url}}" class="py-2 {{#if active}}menu-active{{/if}}">
+        <i class="{{icon}} text-lg"></i>
+        {{label}}
       </a>
+      {{/if}}
     </li>
-
-    {{!-- Dashboards --}}
-    <li class="menu-title">Dashboards</li>
-    <li>
-      <details>
-        <summary class="py-2e">
-          <i class="iconoir-dashboard text-lg"></i>
-          Dashboards
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-shop-four-tiles text-lg"></i>
-                E-Commerce
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-bank text-lg"></i>
-                Finance
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-folder text-lg"></i>
-                Project
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-graph-up text-lg"></i>
-                Analytics
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <a class="py-2">
-        <i class="iconoir-graph-down text-lg"></i>
-        Charts
-      </a>
-    </li>
-
-    {{!-- CRUD Management --}}
-    <li class="menu-title mt-4">CRUD Management</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-group text-lg"></i>
-          Users
-        </summary>
-        <ul>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-community text-lg"></i>
-                All Users
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-user text-lg"></i>
-                Users Detail
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-user-plus text-lg"></i>
-                Add User
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-user-circle text-lg"></i>
-                Roles
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-box text-lg"></i>
-          Products
-        </summary>
-        <ul>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-box text-lg"></i>
-                All Products
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-box text-lg"></i>
-                Products Detail
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-box text-lg"></i>
-                Add Products
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-box text-lg"></i>
-                Categories
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-
-    {{!-- Layouts --}}
-    <li class="menu-title mt-4">Layouts</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-layout-left text-lg"></i>
-          Layouts
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-code-brackets-square text-lg"></i>
-                Blank Layout
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-
-    {{!-- UI Elements --}}
-    <li class="menu-title mt-4">UI Elements</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          UI Elements
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-message-alert text-lg"></i>
-                Alert
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-keyframes text-lg"></i>
-          Extra UI Elements
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-user-square text-lg"></i>
-                Avatar
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <a class="py-2">
-        <i class="iconoir-iconoir text-lg"></i>
-        Icons Library
-      </a>
-    </li>
-
-    {{!-- Forms Elements --}}
-    <li class="menu-title mt-4">Forms Elements</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          Forms Elements
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-message-alert text-lg"></i>
-                Alert
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-
-    {{!-- Tables --}}
-    <li class="menu-title mt-4">Tables</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          Tables
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-message-alert text-lg"></i>
-                Alert
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          Grid Tables
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-message-alert text-lg"></i>
-                Alert
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    
-    {{!-- Pages --}}
-    <li class="menu-title mt-4">Pages</li>
-    <li>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          Authentication
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Login
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Register
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Forgot Password
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Account Settings
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-      <details>
-        <summary class="py-2">
-          <i class="iconoir-report-columns text-lg"></i>
-          Extra Pages
-        </summary>
-        <ul class="flex flex-col gap-1.5 mt-2">
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Error 404
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="py-2">
-              <span class="flex justify-start items-center gap-2">
-                <i class="iconoir-settings-profiles text-lg"></i>
-                Maintenance
-              </span>
-            </a>
-          </li>
-        </ul>
-      </details>
-    </li>
-
-    {{!-- Application Settings --}}
-    <li class="menu-title mt-4">Application Settings</li>
-    <li>
-      <a class="py-2">
-        <i class="iconoir-settings text-lg"></i>
-        Settings
-      </a>
-    </li>
+    {{/each}}
+    {{/each}}
   </ul>
 
   <!-- User Profile & Logout di bottom -->
@@ -371,7 +57,7 @@
     <!-- User Info -->
     <div class="flex items-center gap-3 px-2 py-2">
       <div class="avatar">
-        <div class="w-10 rounded-full ring-2 ring-primary/30">
+        <div class="w-10 rounded-full ring-2 ring-primary/30 pointer-events-none select-none">
           <img alt="User" src="https://picsum.photos/80/80?random=1" />
         </div>
       </div>
