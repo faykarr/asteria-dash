@@ -1,0 +1,542 @@
+{
+  "sidebar": [
+    {
+      "title": "Welcome",
+      "items": [
+        {
+          "label": "Home",
+          "icon": "iconoir-home",
+          "url": "/",
+          "active": true
+        }
+      ]
+    },
+    {
+      "title": "Dashboards",
+      "items": [
+        {
+          "label": "Dashboard Type",
+          "icon": "iconoir-dashboard",
+          "submenu": [
+            {
+              "label": "E-Commerce",
+              "icon": "iconoir-shop-four-tiles",
+              "url": "#"
+            },
+            {
+              "label": "Finance",
+              "icon": "iconoir-bank",
+              "url": "#"
+            },
+            {
+              "label": "Project",
+              "icon": "iconoir-folder",
+              "url": "#"
+            },
+            {
+              "label": "Analytics",
+              "icon": "iconoir-graph-up",
+              "url": "#"
+            },
+            {
+              "label": "Education",
+              "icon": "iconoir-user-crown",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Charts",
+          "icon": "iconoir-graph-down",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Basic Elements",
+      "items": [
+        {
+          "label": "UI Elements",
+          "icon": "iconoir-report-columns",
+          "submenu": [
+            {
+              "label": "Alert",
+              "icon": "iconoir-message-alert",
+              "url": "#"
+            },
+            {
+              "label": "Accordion",
+              "icon": "iconoir-line-space",
+              "url": "#"
+            },
+            {
+              "label": "Badge",
+              "icon": "iconoir-badge-check",
+              "url": "#"
+            },
+            {
+              "label": "Breadcrumb",
+              "icon": "iconoir-bread-slice",
+              "url": "#"
+            },
+            {
+              "label": "Button",
+              "icon": "iconoir-mouse-button-left",
+              "url": "#"
+            },
+            {
+              "label": "Cards",
+              "icon": "iconoir-npm-square",
+              "url": "#"
+            },
+            {
+              "label": "Carousel",
+              "icon": "iconoir-media-image-list",
+              "url": "#"
+            },
+            {
+              "label": "Collapse",
+              "icon": "iconoir-collapse",
+              "url": "#"
+            },
+            {
+              "label": "Dropdown",
+              "icon": "iconoir-download-data-window",
+              "url": "#"
+            },
+            {
+              "label": "List Group",
+              "icon": "iconoir-list",
+              "url": "#"
+            },
+            {
+              "label": "Modal",
+              "icon": "iconoir-open-in-browser",
+              "url": "#"
+            },
+            {
+              "label": "Navbar",
+              "icon": "iconoir-barcode",
+              "url": "#"
+            },
+            {
+              "label": "Pagination",
+              "icon": "iconoir-wrap-text",
+              "url": "#"
+            },
+            {
+              "label": "Progress",
+              "icon": "iconoir-refresh-double",
+              "url": "#"
+            },
+            {
+              "label": "Radial Progress",
+              "icon": "iconoir-refresh-circle",
+              "url": "#"
+            },
+            {
+              "label": "Loading Spinner",
+              "icon": "iconoir-refresh",
+              "url": "#"
+            },
+            {
+              "label": "Toast",
+              "icon": "iconoir-bell-notification",
+              "url": "#"
+            },
+            {
+              "label": "Tooltips",
+              "icon": "iconoir-quote",
+              "url": "#"
+            },
+            {
+              "label": "Swap",
+              "icon": "iconoir-on-tag",
+              "url": "#"
+            },
+            {
+              "label": "Toggle",
+              "icon": "iconoir-switch-on",
+              "url": "#"
+            },
+            {
+              "label": "Diff",
+              "icon": "iconoir-keyframe",
+              "url": "#"
+            },
+            {
+              "label": "Stats",
+              "icon": "iconoir-stats-report",
+              "url": "#"
+            },
+            {
+              "label": "Timeline",
+              "icon": "iconoir-agile",
+              "url": "#"
+            },
+            {
+              "label": "Skeleton",
+              "icon": "iconoir-reload-window",
+              "url": "#"
+            },
+            {
+              "label": "Theme Controller",
+              "icon": "iconoir-switch-off",
+              "url": "#"
+            },
+            {
+              "label": "Tabs",
+              "icon": "iconoir-window-tabs",
+              "url": "#"
+            },
+            {
+              "label": "Indicator",
+              "icon": "iconoir-app-notification",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Extra UI Elements",
+          "icon": "iconoir-keyframes",
+          "submenu": [
+            {
+              "label": "Avatar",
+              "icon": "iconoir-user-square",
+              "url": "#"
+            },
+            {
+              "label": "Divider",
+              "icon": "iconoir-linear",
+              "url": "#"
+            },
+            {
+              "label": "Chips",
+              "icon": "iconoir-component",
+              "url": "#"
+            },
+            {
+              "label": "Toastify",
+              "icon": "iconoir-app-notification",
+              "url": "#"
+            },
+            {
+              "label": "Sweet Alert",
+              "icon": "iconoir-shield-alert",
+              "url": "#"
+            },
+            {
+              "label": "Countdown",
+              "icon": "iconoir-timer",
+              "url": "#"
+            },
+            {
+              "label": "Keyboards",
+              "icon": "iconoir-mac-control-key",
+              "url": "#"
+            },
+            {
+              "label": "Rating",
+              "icon": "iconoir-bright-star",
+              "url": "#"
+            },
+            {
+              "label": "File Uploader",
+              "icon": "iconoir-folder-plus",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Icons Library",
+          "icon": "iconoir-iconoir",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Forms Elements",
+      "items": [
+        {
+          "label": "Basic Forms",
+          "icon": "iconoir-network-reverse",
+          "submenu": [
+            {
+              "label": "Input Field",
+              "icon": "iconoir-input-field",
+              "url": "#"
+            },
+            {
+              "label": "Input Group",
+              "icon": "iconoir-input-output",
+              "url": "#"
+            },
+            {
+              "label": "Checkbox",
+              "icon": "iconoir-check-square",
+              "url": "#"
+            },
+            {
+              "label": "Label",
+              "icon": "iconoir-label",
+              "url": "#"
+            },
+            {
+              "label": "Select",
+              "icon": "iconoir-select-window",
+              "url": "#"
+            },
+            {
+              "label": "Radio",
+              "icon": "iconoir-mac-dock",
+              "url": "#"
+            },
+            {
+              "label": "Textarea",
+              "icon": "iconoir-mac-os-window",
+              "url": "#"
+            },
+            {
+              "label": "Fieldset",
+              "icon": "iconoir-multi-mac-os-window",
+              "url": "#"
+            },
+            {
+              "label": "Range",
+              "icon": "iconoir-control-slider",
+              "url": "#"
+            },
+            {
+              "label": "File Input",
+              "icon": "iconoir-upload-square",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Extra UI Forms",
+          "icon": "iconoir-network",
+          "submenu": [
+            {
+              "label": "Calendar",
+              "icon": "iconoir-calendar",
+              "url": "#"
+            },
+            {
+              "label": "Filter",
+              "icon": "iconoir-filter",
+              "url": "#"
+            },
+            {
+              "label": "Forms Layout",
+              "icon": "iconoir-view-grid",
+              "url": "#"
+            },
+            {
+              "label": "Form Validation",
+              "icon": "iconoir-grid-xmark",
+              "url": "#"
+            },
+            {
+              "label": "Form Editor",
+              "icon": "iconoir-grid-minus",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tables",
+      "items": [
+        {
+          "label": "Default Tables",
+          "icon": "iconoir-table",
+          "submenu": [
+            {
+              "label": "Basic Tables",
+              "icon": "iconoir-windows",
+              "url": "#"
+            },
+            {
+              "label": "Advanced Tables",
+              "icon": "iconoir-search-window",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Third Party Tables",
+          "icon": "iconoir-table-rows",
+          "submenu": [
+            {
+              "label": "Grid.js",
+              "icon": "iconoir-view-grid",
+              "url": "#"
+            },
+            {
+              "label": "DataTables",
+              "icon": "iconoir-search-window",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Layouts",
+      "items": [
+        {
+          "label": "Layouts Type",
+          "icon": "iconoir-layout-left",
+          "submenu": [
+            {
+              "label": "Blank Layout",
+              "icon": "iconoir-code-brackets-square",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CRUD Management",
+      "items": [
+        {
+          "label": "Users",
+          "icon": "iconoir-group",
+          "submenu": [
+            {
+              "label": "All Users",
+              "icon": "iconoir-community",
+              "url": "#"
+            },
+            {
+              "label": "Users Detail",
+              "icon": "iconoir-user",
+              "url": "#"
+            },
+            {
+              "label": "Add User",
+              "icon": "iconoir-user-plus",
+              "url": "#"
+            },
+            {
+              "label": "Roles",
+              "icon": "iconoir-user-circle",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Products",
+          "icon": "iconoir-box",
+          "submenu": [
+            {
+              "label": "All Products",
+              "icon": "iconoir-packages",
+              "url": "#"
+            },
+            {
+              "label": "Products Detail",
+              "icon": "iconoir-package-lock",
+              "url": "#"
+            },
+            {
+              "label": "Add Products",
+              "icon": "iconoir-package",
+              "url": "#"
+            },
+            {
+              "label": "Categories",
+              "icon": "iconoir-box-iso",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pages",
+      "items": [
+        {
+          "label": "Authentication",
+          "icon": "iconoir-lock",
+          "submenu": [
+            {
+              "label": "Login",
+              "icon": "iconoir-log-in",
+              "url": "#"
+            },
+            {
+              "label": "Register",
+              "icon": "iconoir-fingerprint-window",
+              "url": "#"
+            },
+            {
+              "label": "Forgot Password",
+              "icon": "iconoir-lock-square",
+              "url": "#"
+            },
+            {
+              "label": "Account Settings",
+              "icon": "iconoir-settings-profiles",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "label": "Extra Pages",
+          "icon": "iconoir-multiple-pages-plus",
+          "submenu": [
+            {
+              "label": "Error 404",
+              "icon": "iconoir-web-window-xmark",
+              "url": "#"
+            },
+            {
+              "label": "Maintenance",
+              "icon": "iconoir-window-xmark",
+              "url": "#"
+            },
+            {
+              "label": "Notifications",
+              "icon": "iconoir-bell-notification",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Application Settings",
+      "items": [
+        {
+          "label": "Settings",
+          "icon": "iconoir-settings",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Supports Developer",
+      "items": [
+        {
+          "label": "Documentation",
+          "icon": "iconoir-multiple-pages",
+          "url": "https://asteria-dash.vercel.app/"
+        },
+        {
+          "label": "Contribute",
+          "icon": "iconoir-puzzle",
+          "url": "https://github.com/faykarr/asteria-dash?tab=contributing-ov-file"
+        },
+        {
+          "label": "Donate",
+          "icon": "iconoir-lot-of-cash",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}
