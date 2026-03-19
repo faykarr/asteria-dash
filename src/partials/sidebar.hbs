@@ -16,6 +16,15 @@
 
   <!-- Navigation Menu -->
   <ul id="sidebar-menu"
+    x-data="{ 
+      currentPath: window.location.pathname,
+      isActive(url) {
+        if (!url || url === '#') return false;
+        const normalizedUrl = url.replace('.html', '').replace(/\/$/, '') || '/';
+        const normalizedPath = this.currentPath.replace('.html', '').replace(/\/$/, '') || '/';
+        return normalizedPath === normalizedUrl || (normalizedPath === '/' && normalizedUrl === '/index');
+      }
+    }"
     class="menu menu-md flex-1 flex-col flex-nowrap px-3 py-4 w-full gap-1 relative overflow-hidden">
 
     {{#each sidebar}}
@@ -23,7 +32,7 @@
     {{#each items}}
     <li>
       {{#if submenu}}
-      <details>
+      <details :open="Array.from($el.querySelectorAll('a')).some(link => isActive(link.getAttribute('href')))">
         <summary class="py-2">
           <i class="{{icon}} text-lg"></i>
           {{label}}
@@ -31,7 +40,7 @@
         <ul class="flex flex-col gap-1.5 mt-2">
           {{#each submenu}}
           <li>
-            <a href="{{url}}" class="py-2">
+            <a href="{{url}}" class="py-2" :class="{ 'menu-active': isActive('{{url}}') }">
               <span class="flex justify-start items-center gap-2">
                 <i class="{{icon}} text-lg"></i>
                 {{label}}
@@ -42,7 +51,7 @@
         </ul>
       </details>
       {{else}}
-      <a href="{{url}}" class="py-2 {{#if active}}menu-active{{/if}}">
+      <a href="{{url}}" class="py-2" :class="{ 'menu-active': isActive('{{url}}') }">
         <i class="{{icon}} text-lg"></i>
         {{label}}
       </a>

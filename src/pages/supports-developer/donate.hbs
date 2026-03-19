@@ -1,0 +1,63 @@
+{{#> layouts/main.hbs }}
+
+<div class="flex flex-col gap-6">
+  <!-- Header -->
+  <div class="flex flex-col gap-1">
+    <h2 class="text-2xl font-bold text-base-content">Support the Developer</h2>
+    <p class="text-sm text-base-content/60">If you find this project useful, consider supporting its development!</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Ko-fi Widget Card -->
+    <div class="lg:col-span-2">
+      <div class="card bg-base-100 border border-base-300 shadow-sm overflow-hidden">
+        <div class="card-body p-0">
+          <iframe id='kofiframe' src='https://ko-fi.com/faykarr/?hidefeed=true&widget=true&embed=true&preview=true'
+            style='border:none;width:100%;padding:10px;padding-top: 35px;background:#f9f9f9;' height='712' title='faykarr'></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Card -->
+    <div class="flex flex-col gap-6">
+      <div class="card bg-primary text-primary-content shadow-lg">
+        <div class="card-body p-6">
+          <h3 class="card-title text-xl mb-2 flex items-center gap-2">
+            <i class="iconoir-heart-solid"></i> Thank You!
+          </h3>
+          <p class="text-primary-content/90 text-sm leading-relaxed mb-4">
+            Your support helps me maintain this project and create more open-source tools for the community. Every donation is
+            highly appreciated!
+          </p>
+          <div class="card-actions justify-end mt-2">
+            <a href="https://ko-fi.com/faykarr" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-primary-content text-primary-content hover:bg-primary-content hover:text-primary">
+              View Ko-fi Profile
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 border border-base-300 shadow-sm">
+        <div class="card-body p-6">
+          <h3 class="font-bold text-lg mb-3">Other ways to help</h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <i class="iconoir-star text-warning"></i>
+              <span>Star the project on GitHub</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="iconoir-chat-bubble text-info"></i>
+              <span>Share feedback or report issues</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="iconoir-share-android text-success"></i>
+              <span>Tell your friends about Asteria Dash</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/layouts/main.hbs}}
