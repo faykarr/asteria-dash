@@ -1,70 +1,84 @@
 # Asteria Dash
 
-Asteria Dash adalah template dashboard admin modern yang dibangun menggunakan Vite, Tailwind CSS, Alpine.js, dan Handlebars. Template ini dirancang untuk memberikan antarmuka yang bersih, responsif, dan mudah disesuaikan untuk berbagai kebutuhan aplikasi web.
+[![Stars](https://img.shields.io/github/stars/faykarr/asteria-dash?style=flat-square)](https://github.com/faykarr/asteria-dash/stargazers)
+[![Forks](https://img.shields.io/github/forks/faykarr/asteria-dash?style=flat-square)](https://github.com/faykarr/asteria-dash/network/members)
+[![Issues](https://img.shields.io/github/issues/faykarr/asteria-dash?style=flat-square)](https://github.com/faykarr/asteria-dash/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/faykarr/asteria-dash?style=flat-square)](https://github.com/faykarr/asteria-dash/pulls)
+[![License](https://img.shields.io/github/license/faykarr/asteria-dash?style=flat-square)](LICENSE)
 
-## Fitur Utama
+Asteria Dash is a agnostic framework modern admin dashboard template built with Vite, Tailwind CSS v4, Alpine.js, and Handlebars. This template is designed to provide a clean, responsive, and easily customizable interface for various web application needs.
 
-- **Vite**: Build tool yang sangat cepat untuk pengembangan web modern.
-- **Tailwind CSS (v4)**: Framework CSS utility-first untuk styling yang cepat dan fleksibel.
-- **Alpine.js**: Framework JavaScript yang ringan untuk interaktivitas komponen.
-- **Handlebars**: Templating engine untuk memisahkan struktur HTML menjadi komponen yang dapat digunakan kembali.
-- **DaisyUI**: Plugin komponen untuk Tailwind CSS guna mempercepat pembuatan UI.
-- **Iconoir**: Ikon open-source yang elegan.
-- **Perfect Scrollbar**: Scrollbar kustom yang indah untuk mempercantik tampilan.
+## Key Features
 
-## Prasyarat
+- **Vite**: A blazing fast build tool for modern web development.
+- **Tailwind CSS (v4)**: A utility-first CSS framework for rapid and flexible styling.
+- **Alpine.js**: A lightweight JavaScript framework for component interactivity.
+- **Handlebars**: A templating engine to separate HTML structure into reusable components.
+- **DaisyUI**: A component plugin for Tailwind CSS to speed up UI development.
+- **Iconoir**: Elegant open-source icons.
+- **Perfect Scrollbar**: Beautiful custom scrollbars to enhance the look and feel.
 
-Pastikan Anda telah menginstal Node.js di sistem Anda sebelum memulai.
+## Prerequisites
 
-## Memulai
+Make sure you have Node.js installed on your system before starting.
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal Anda:
+## Getting Started
 
-1. **Clone Repositori**
+Follow these steps to run the project in your local environment:
+
+1. **Clone the Repository**
    ```bash
-   git clone <url-repositori>
+   git clone https://github.com/faykarr/asteria-dash.git
    cd asteria-dash
    ```
 
-2. **Instal Dependensi**
+2. **Install Dependencies**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
-3. **Jalankan Server Pengembangan**
+3. **Run the Development Server**
    ```bash
    npm run dev
    ```
-   Server Vite akan berjalan dan dapat diakses melalui browser Anda, biasanya di `http://localhost:5173`.
+   The Vite server will run and can be accessed via your browser, usually at `http://localhost:5173`.
 
-## Struktur Proyek
+## Project Structure
 
 ```text
 asteria-dash/
 ├── src/
-│   ├── assets/       # File CSS, gambar, dan aset statis lainnya
-│   ├── data/         # Data JSON atau file pengaturan
-│   ├── layouts/      # Layout utama Handlebars (misal: layout.hbs)
-│   ├── pages/        # Halaman-halaman spesifik
-│   └── partials/     # Komponen Handlebars yang dapat digunakan ulang
-├── package.json      # Konfigurasi dependensi dan skrip proyek
-└── vite.config.js    # Konfigurasi spesifik untuk Vite
+│   ├── assets/       # CSS files, images, and other static assets
+│   ├── data/         # JSON data or configuration files
+│   ├── layouts/      # Main Handlebars layouts (e.g., layout.hbs)
+│   ├── pages/        # Specific pages
+│   └── partials/     # Reusable Handlebars components
+├── package.json      # Project dependencies and scripts configuration
+└── vite.config.js    # Vite-specific configuration
 ```
 
-## Membangun untuk Produksi
+## Build for Production
 
-Untuk menghasilkan file statis yang siap di-deploy, jalankan perintah berikut:
+To generate production-ready static files, run the following command:
 
 ```bash
 npm run build
 ```
 
-Hasil build akan berada di dalam folder `dist`.
+The build results will be in the `dist` folder.
 
-## Lisensi
+## License
 
-Proyek ini dilisensikan di bawah [MIT License](LICENSE). Hak Cipta (c) 2026 Nasyath Faykar.
+This project is licensed under the [MIT License](LICENSE). Copyright (c) 2026 Nasyath Faykar.
 
-## Berkontribusi
+## Contributing
 
-Silakan lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan mengenai cara berkontribusi pada proyek ini. Kami sangat menghargai setiap bentuk kontribusi! Jangan lupa untuk mematuhi [Kode Etik](CODE_OF_CONDUCT.md) kami.
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project. We appreciate every form of contribution! Don't forget to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Supports Developer
+
+If you find this project useful and want to support its development, you can donate via:
+
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/faykar)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/faykarr)
+

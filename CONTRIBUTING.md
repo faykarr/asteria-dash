@@ -1,27 +1,28 @@
-# Panduan Berkontribusi
+# Contributing Guide
 
-Terima kasih atas minat Anda untuk berkontribusi pada proyek Asteria Dash! Kami menyambut baik kontribusi dari siapa saja.
+Thank you for your interest in contributing to the Asteria Dash project! We welcome contributions from everyone.
 
-## Cara Berkontribusi
+## How to Contribute
 
-1. **Fork Repositori**: Buat salinan repositori ini ke akun GitHub Anda.
-2. **Buat Branch Baru**: Buat branch baru untuk fitur atau perbaikan bug yang Anda kerjakan (`git checkout -b fitur-baru`).
-3. **Lakukan Perubahan**: Lakukan perubahan pada kode Anda. Pastikan untuk mengikuti gaya penulisan kode yang ada.
-4. **Commit Perubahan**: Simpan perubahan Anda dengan pesan commit yang jelas (`git commit -m "Menambahkan fitur baru"`).
-5. **Push ke Branch**: Push branch Anda ke repositori hasil fork (`git push origin fitur-baru`).
-6. **Buat Pull Request**: Buka Pull Request (PR) ke repositori utama. Jelaskan perubahan yang Anda buat secara detail.
+1. **Fork the Repository**: Create a copy of this repository in your GitHub account.
+2. **Create a New Branch**: Create a new branch for the feature or bug fix you are working on (`git checkout -b new-feature`).
+3. **Make Changes**: Make your changes to the code. Be sure to follow the existing coding style.
+4. **Commit Changes**: Save your changes with a clear commit message (`git commit -m "Add new feature"`).
+5. **Push to Branch**: Push your branch to your forked repository (`git push origin new-feature`).
+6. **Create a Pull Request**: Open a Pull Request (PR) to the main repository. Explain the changes you've made in detail.
 
-## Melaporkan Bug
+## Reporting Bugs
 
-Jika Anda menemukan bug, silakan buat laporan masalah (issue) baru dengan informasi berikut:
-- Deskripsi jelas mengenai bug.
-- Langkah-langkah untuk mereproduksi bug.
-- Versi sistem operasi dan lingkungan yang digunakan.
+If you find a bug, please create a new issue with the following information:
+- A clear description of the bug.
+- Steps to reproduce the bug.
+- The version of the operating system and environment being used.
 
-## Pengembangan Lokal
+## Local Development
 
-1. Clone repositori: `git clone <url-repositori>`
-2. Install dependensi: `npm install`
-3. Jalankan server pengembangan: `npm run dev`
+1. Clone the repository: `git clone https://github.com/faykarr/asteria-dash.git`
+2. Install dependencies: `npm install --legacy-peer-deps`
+3. Run the development server: `npm run dev`
 
-Terima kasih sekali lagi atas kontribusi Anda!
+Thank you again for your contribution!
+

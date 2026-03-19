@@ -1,25 +1,26 @@
-# Kode Etik (Code of Conduct)
+# Code of Conduct
 
-## Ikrar Kami
+## Our Pledge
 
-Sebagai pengelola dan kontributor proyek ini, kami berikrar untuk menjadikan partisipasi dalam proyek ini dan komunitas kami sebagai pengalaman yang bebas dari pelecehan bagi semua orang, tanpa memandang usia, ukuran tubuh, disabilitas, etnis, karakteristik jenis kelamin, identitas dan ekspresi gender, tingkat pengalaman, pendidikan, status sosial ekonomi, kebangsaan, penampilan fisik, ras, agama, atau identitas seksual dan orientasi seksual.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-## Standar Kami
+## Our Standards
 
-Contoh perilaku yang berkontribusi pada penciptaan lingkungan yang positif meliputi:
-* Menggunakan bahasa yang ramah dan inklusif
-* Menghargai perbedaan pendapat
-* Menerima kritik yang membangun dengan baik
-* Berfokus pada apa yang terbaik bagi komunitas
-* Menunjukkan empati terhadap anggota komunitas lainnya
+Examples of behavior that contributes to creating a positive environment include:
+* Using welcoming and inclusive language
+* Being respectful of differing viewpoints
+* Gracefully accepting constructive criticism
+* Focusing on what is best for the community
+* Showing empathy towards other community members
 
-Contoh perilaku yang tidak dapat diterima meliputi:
-* Penggunaan bahasa atau gambar seksual serta perhatian atau pendekatan seksual yang tidak diinginkan
-* Komentar yang merendahkan, menghina, serta serangan pribadi atau politik
-* Pelecehan publik atau pribadi
-* Mempublikasikan informasi pribadi orang lain, seperti alamat fisik atau elektronik, tanpa izin eksplisit
-* Tindakan lain yang secara wajar dapat dianggap tidak pantas dalam lingkungan profesional
+Examples of unacceptable behavior by participants include:
+* The use of sexualized language or imagery and unwelcome sexual attention or advances
+* Trolling, insulting/derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or electronic address, without explicit permission
+* Other conduct which could reasonably be considered inappropriate in a professional setting
 
-## Tanggung Jawab
+## Responsibilities
 
-Pengelola proyek bertanggung jawab untuk mengklarifikasi standar perilaku yang dapat diterima dan diharapkan untuk mengambil tindakan korektif yang tepat dan adil dalam menanggapi segala bentuk perilaku yang tidak dapat diterima.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+
