@@ -12,6 +12,26 @@
       ]
     },
     {
+      "title": "Supports Developer",
+      "items": [
+        {
+          "label": "Documentation",
+          "icon": "iconoir-multiple-pages",
+          "url": "https://asteria-dash.vercel.app/"
+        },
+        {
+          "label": "Contribute",
+          "icon": "iconoir-puzzle",
+          "url": "https://github.com/faykarr/asteria-dash?tab=contributing-ov-file"
+        },
+        {
+          "label": "Donate",
+          "icon": "iconoir-lot-of-cash",
+          "url": "/supports-developer/donate.html"
+        }
+      ]
+    },
+    {
       "title": "Dashboards",
       "items": [
         {
@@ -515,26 +535,6 @@
           "label": "Settings",
           "icon": "iconoir-settings",
           "url": "#"
-        }
-      ]
-    },
-    {
-      "title": "Supports Developer",
-      "items": [
-        {
-          "label": "Documentation",
-          "icon": "iconoir-multiple-pages",
-          "url": "https://asteria-dash.vercel.app/"
-        },
-        {
-          "label": "Contribute",
-          "icon": "iconoir-puzzle",
-          "url": "https://github.com/faykarr/asteria-dash?tab=contributing-ov-file"
-        },
-        {
-          "label": "Donate",
-          "icon": "iconoir-lot-of-cash",
-          "url": "/supports-developer/donate.html"
         }
       ]
     }
