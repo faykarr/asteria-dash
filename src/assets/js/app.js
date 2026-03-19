@@ -44,6 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-// Import datatables
-import './datatables.js';
